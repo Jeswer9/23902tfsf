@@ -62,7 +62,6 @@ public class Star : Shape
      public override void SVGDraw(StreamWriter writer)
     {
         SetPoints();
-        writer.WriteLine("<polyline points=\"65,50 74,77 51,60 79,60 56,77 65,50\"\nstyle=\"fill:none;stroke:black;stroke-width:1\" />");
         writer.WriteLine("<polyline points=\"{0},{1} {2},{3} {4},{5} {6},{7} {8},{9} {10},{11}\"\nstyle=\"fill:none;stroke:black;stroke-width:1\" />",
             pts[0].X, pts[0].Y, pts[1].X, pts[1].Y, pts[2].X, pts[2].Y,
             pts[3].X, pts[3].Y, pts[4].X, pts[4].Y,pts[0].X, pts[0].Y);
