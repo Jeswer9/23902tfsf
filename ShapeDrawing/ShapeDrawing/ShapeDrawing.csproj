@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Canvas.cs" />
     <Compile Include="Circle.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Rectangle.cs" />

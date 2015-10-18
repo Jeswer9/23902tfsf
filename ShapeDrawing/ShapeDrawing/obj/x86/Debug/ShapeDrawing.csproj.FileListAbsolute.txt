@@ -5,3 +5,5 @@ C:\Users\jaswir\Desktop\ShapeDrawing\ShapeDrawing\obj\x86\Debug\ShapeDrawing.Pro
 C:\Users\jaswir\Desktop\ShapeDrawing\ShapeDrawing\obj\x86\Debug\ShapeDrawing.csproj.GenerateResource.Cache
 C:\Users\jaswir\Desktop\ShapeDrawing\ShapeDrawing\obj\x86\Debug\ShapeDrawing.exe
 C:\Users\jaswir\Desktop\ShapeDrawing\ShapeDrawing\obj\x86\Debug\ShapeDrawing.pdb
+C:\Users\jaswir\Documents\GitHub\LabFour\ShapeDrawing\ShapeDrawing\obj\x86\Debug\ShapeDrawing.exe
+C:\Users\jaswir\Documents\GitHub\LabFour\ShapeDrawing\ShapeDrawing\obj\x86\Debug\ShapeDrawing.pdb
