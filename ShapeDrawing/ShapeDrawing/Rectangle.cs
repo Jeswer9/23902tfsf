@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.IO;
 
 class Rectangle : Shape
 {
@@ -29,5 +29,13 @@ class Rectangle : Shape
 		Canvas.DrawLine(pen,x+width,y+height,x,y+height);
 		Canvas.DrawLine(pen,x,y+height,x,y);
     }
+
+    public override void SVGDraw(StreamWriter writer)
+    {      
+        writer.WriteLine("<polyline points=\"{0},{1} {2},{1} {2},{3} {0},{3} {0},{1}\"\nstyle=\"fill:none;stroke:black;stroke-width:1\" />"
+            , x,y,x+width,y+height);
+    }
+      
+                        
 }
 

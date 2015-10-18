@@ -79,32 +79,10 @@ public class ShapeDrawingForm : Form
                     writer.WriteLine("<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">");
                     foreach (Shape s in shapes)
                     {
-                        Type t = s.GetType();
-
-                        switch(s.ToString())
-                        {
-                            case("Circle"):
-                                writer.WriteLine("<circle cx=\"70\" cy=\"125\" r=\"25\" stroke-width=\"1\"\nfill=\"none\" stroke=\"black\" />");                                     
-                                    break;
-
-                            case ("Rectangle"):
-                                    writer.WriteLine("<polyline points=\"150,100 250,100 250,150 150,150 150,100\"\nstyle=\"fill:none;stroke:black;stroke-width:1\" />");
-                                    break;
-
-                            case ("Star"):
-                                    writer.WriteLine("<polyline points=\"65,50 74,77 51,60 79,60 56,77 65,50\"\nstyle=\"fill:none;stroke:black;stroke-width:1\" />");
-                                    break;
-
-                                      
-                                 
-                        }
-
+                        s.SVGDraw(writer);
                     }
                     
-                    writer.WriteLine("</svg>");
-                      
-
-
+                    writer.WriteLine("</svg>");
                 }				
 			}
 		}
