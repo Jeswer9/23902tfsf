@@ -17,18 +17,16 @@ class Circle : Shape
 		this.x = x;
 		this.y = y;
 		this.size = size;
+        
     }
 
-    public override void Draw(Graphics Canvas)
+    public override void Draw(Graphics Canvas, StreamWriter writer)
     {
-		Pen pen = new Pen(Color.Black);
-        Canvas.DrawEllipse(pen, this.x, this.y, this.size, this.size);
+        canvas.canvas = Canvas;
+        canvas.writer = writer;
+        canvas.DrawCircle(x, y, size);
+        
     }
 
-    public override void SVGDraw(StreamWriter writer)
-    {
-        int radius = size / 2;
-         writer.WriteLine("<circle cx=\"{0}\" cy=\"{1}\" r=\"{2}\" stroke-width=\"1\"\nfill=\"none\" stroke=\"black\" />",x+radius,y+radius,radius);                                     
-    }
 
 }

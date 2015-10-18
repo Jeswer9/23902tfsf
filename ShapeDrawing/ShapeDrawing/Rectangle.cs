@@ -21,21 +21,15 @@ class Rectangle : Shape
 		this.height = height;
     }
     
-	public override void Draw(Graphics Canvas)
+	public override void Draw(Graphics Canvas, StreamWriter writer)
     {
-		Pen pen = new Pen(Color.Black);
-		Canvas.DrawLine(pen,x,y,x + width,y);
-		Canvas.DrawLine(pen,x+width,y,x+width,y+height);
-		Canvas.DrawLine(pen,x+width,y+height,x,y+height);
-		Canvas.DrawLine(pen,x,y+height,x,y);
-    }
-
-    public override void SVGDraw(StreamWriter writer)
-    {      
-        writer.WriteLine("<polyline points=\"{0},{1} {2},{1} {2},{3} {0},{3} {0},{1}\"\nstyle=\"fill:none;stroke:black;stroke-width:1\" />"
-            , x,y,x+width,y+height);
-    }
-      
+        canvas.canvas = Canvas;
+        canvas.writer = writer;
+        canvas.DrawLine(x, y, x + width, y);
+        canvas.DrawLine(x + width, y, x + width, y + height);
+        canvas.DrawLine(x + width, y + height, x, y + height);
+        canvas.DrawLine(x, y + height, x, y);
+    }     
                         
 }
 
