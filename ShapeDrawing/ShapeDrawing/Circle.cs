@@ -20,12 +20,9 @@ class Circle : Shape
         
     }
 
-    public override void Draw(Graphics Canvas, StreamWriter writer)
+    public override void Draw()
     {
-        canvas.canvas = Canvas;
-        canvas.writer = writer;
-        canvas.DrawCircle(x, y, size);
-        
+        canvas.DrawCircle(x, y, size);       
     }
 
 

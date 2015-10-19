@@ -46,11 +46,9 @@ public class Star : Shape
         }
     }
 
-    public override void Draw(Graphics Canvas, StreamWriter writer)
+    public override void Draw()
 	{
         SetPoints();
-        canvas.canvas = Canvas;
-        canvas.writer = writer;
 		for (int i = 0; i < numPoints; i++) 
 		{
 			canvas.DrawLine(pts[i].X,

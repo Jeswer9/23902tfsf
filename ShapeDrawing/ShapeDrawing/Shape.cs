@@ -11,6 +11,6 @@ public abstract class Shape
        
     }
 
-    public abstract void Draw(Graphics Canvas, StreamWriter writer);
+    public abstract void Draw();
 	
 }

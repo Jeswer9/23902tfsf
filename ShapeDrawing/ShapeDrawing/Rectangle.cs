@@ -21,10 +21,8 @@ class Rectangle : Shape
 		this.height = height;
     }
     
-	public override void Draw(Graphics Canvas, StreamWriter writer)
+	public override void Draw()
     {
-        canvas.canvas = Canvas;
-        canvas.writer = writer;
         canvas.DrawLine(x, y, x + width, y);
         canvas.DrawLine(x + width, y, x + width, y + height);
         canvas.DrawLine(x + width, y + height, x, y + height);
