@@ -23,7 +23,7 @@ public class Star : Shape
 		this.height = height;
 	}
 
-    private void SetPoints()
+    private void SetLinePoints()
     {
         numPoints = 5;
         pts = new Point[numPoints];
@@ -48,10 +48,10 @@ public class Star : Shape
 
     public override void Draw()
 	{
-        SetPoints();
+        SetLinePoints();
 		for (int i = 0; i < numPoints; i++) 
 		{
-			canvas.DrawLine(pts[i].X,
+			drawing.DrawLine(pts[i].X,
                                 pts[i].Y,
                                 pts[(i+1) % numPoints].X,
                                 pts[(i+1) % numPoints].Y);

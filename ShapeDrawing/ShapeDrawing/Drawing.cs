@@ -6,11 +6,11 @@ using System.Drawing;
 using System.IO;
 
 
-    public abstract class Canvas
+    public abstract class Drawing
     {
         protected object outputObject;
 
-        public Canvas(object outputObject)
+        public Drawing(object outputObject)
         {
             this.outputObject = outputObject;
         }
@@ -19,9 +19,9 @@ using System.IO;
         public abstract void DrawCircle(int x, int y, int size);
     }
 
-    class SVG_Canvas : Canvas
+    class SVG_Drawing : Drawing
     {
-        public SVG_Canvas(StreamWriter writer)
+        public SVG_Drawing(StreamWriter writer)
             : base(writer)
         {
 
@@ -41,9 +41,9 @@ using System.IO;
         }
     }
 
-    class CSharp_Canvas : Canvas
+    class CSharp_Drawing : Drawing
     {
-         public CSharp_Canvas(Graphics graphics)
+         public CSharp_Drawing(Graphics graphics)
             : base(graphics)
         {
 

@@ -4,7 +4,7 @@ using System.IO;
 
 public abstract class Shape
 {
-    public Canvas canvas;
+    public Drawing drawing;
 
     public Shape()
     {
