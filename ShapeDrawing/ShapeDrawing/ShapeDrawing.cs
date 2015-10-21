@@ -72,38 +72,52 @@ public class ShapeDrawingForm : Form
                 //   commands to draw the shapes
                 using(StreamWriter writer = new StreamWriter(stream))
                 {
-                    //Write strings to the file here using:          (        
-                    writer.WriteLine("<?xml version=\"1.0\" standalone=\"no\"?>");
-                    writer.WriteLine("<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"");
-                    writer.WriteLine("\"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">");
-                    writer.WriteLine("<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">");
 
-                    //Draw all the shapes in an svg file
-                    CanvasFactory canvasFactory = new CanvasFactory();
-                    Canvas SVGcanvas = canvasFactory.FabricateCanvas("SVG", writer);
+                    GenerateDefaultStartingSVG(writer);
 
-                    foreach (Shape shape in shapes)
-                    {                        
-                        shape.canvas = SVGcanvas;
-                        shape.Draw();
-                    }
-                    
-                    writer.WriteLine("</svg>");
+                    // Reference SVG_Canvas to each Shape, such that the shapes will use SVG_Canvas to Draw. 
+                    ReferenceCanvasToShapes("SVG", writer);
+                 
+                    GenerateDefaultEndingSVG(writer);
                 }				
 			}
 		}
 	}
 
-    private void OnPaint(object sender, PaintEventArgs e)
-	{
-        // Draw all the shapes in CSHarp
-        CanvasFactory canvasFactory = new CanvasFactory();
-        Canvas CSharpCanvas = canvasFactory.FabricateCanvas("CSharp", e.Graphics);
+    private void GenerateDefaultEndingSVG(StreamWriter writer)
+    {
+        writer.WriteLine("</svg>");
+    }
 
+    private void GenerateDefaultStartingSVG(StreamWriter writer)
+    {
+        writer.WriteLine("<?xml version=\"1.0\" standalone=\"no\"?>");
+        writer.WriteLine("<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"");
+        writer.WriteLine("\"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">");
+        writer.WriteLine("<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">");
+    }
+
+    private void ReferenceCanvasToShapes(string canvasName, object outputObject)
+    {
         foreach (Shape shape in shapes)
         {
-            shape.canvas = CSharpCanvas;
+            shape.canvas = SelectCanvasFromFactory(canvasName, outputObject);
             shape.Draw();
         }
+
+    }
+
+    private Canvas SelectCanvasFromFactory(string canvasName, object outputObject)
+    {
+        CanvasFactory canvasFactory = new CanvasFactory();
+        return canvasFactory.FabricateCanvas(canvasName, outputObject);
+    }
+
+    private void OnPaint(object sender, PaintEventArgs e)
+	{
+        // Reference CSharp_Canvas to each Shape, such that the shapes will use CSharp_Canvas  to Draw. 
+        ReferenceCanvasToShapes("CSharp", e.Graphics);
+
+     
 	}
 }

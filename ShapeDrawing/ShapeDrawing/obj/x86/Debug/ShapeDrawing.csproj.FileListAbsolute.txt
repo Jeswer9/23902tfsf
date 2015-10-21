@@ -5,3 +5,5 @@ C:\Users\ian\Documents\GitHub\23902tfsf\ShapeDrawing\ShapeDrawing\obj\x86\Debug\
 C:\Users\ian\Documents\GitHub\23902tfsf\ShapeDrawing\ShapeDrawing\obj\x86\Debug\ShapeDrawing.csproj.GenerateResource.Cache
 C:\Users\ian\Documents\GitHub\23902tfsf\ShapeDrawing\ShapeDrawing\obj\x86\Debug\ShapeDrawing.exe
 C:\Users\ian\Documents\GitHub\23902tfsf\ShapeDrawing\ShapeDrawing\obj\x86\Debug\ShapeDrawing.pdb
+C:\Users\jaswir\Documents\GitHub\23902tfsf\ShapeDrawing\ShapeDrawing\obj\x86\Debug\ShapeDrawing.exe
+C:\Users\jaswir\Documents\GitHub\23902tfsf\ShapeDrawing\ShapeDrawing\obj\x86\Debug\ShapeDrawing.pdb
