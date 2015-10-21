@@ -79,10 +79,11 @@ public class ShapeDrawingForm : Form
                     writer.WriteLine("<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">");
 
                     //Draw all the shapes in an svg file
+                    DrawingFactory drawingFactory = new DrawingFactory();
+                    Drawing SVGdrawing = drawingFactory.FabricateDrawing("SVG", writer);
+
                     foreach (Shape shape in shapes)
-                    {
-                        DrawingFactory drawingFactory = new DrawingFactory();
-                        Drawing SVGdrawing = drawingFactory.FabricateDrawing("SVG", writer);
+                    {                        
                         shape.drawing = SVGdrawing;
                         shape.Draw();
                     }
@@ -95,11 +96,12 @@ public class ShapeDrawingForm : Form
 
     private void OnPaint(object sender, PaintEventArgs e)
 	{
-		// Draw all the shapes in CSHarp
+        // Draw all the shapes in CSHarp
+        DrawingFactory drawingFactory = new DrawingFactory();
+        Drawing CSharpdrawing = drawingFactory.FabricateDrawing("CSharp", e.Graphics);
+
         foreach (Shape shape in shapes)
         {
-            DrawingFactory drawingFactory = new DrawingFactory();
-            Drawing CSharpdrawing = drawingFactory.FabricateDrawing("CSharp", e.Graphics);
             shape.drawing = CSharpdrawing;
             shape.Draw();
         }
