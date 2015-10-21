@@ -76,18 +76,13 @@ public class ShapeDrawingForm : Form
                     GenerateDefaultStartingSVG(writer);
 
                     // Reference SVG_Canvas to each Shape, such that the shapes will use SVG_Canvas to Draw. 
-                    ReferenceCanvasToShapes("SVG", writer);
+                    DrawShapesToCanvas("SVG", writer);
                  
                     GenerateDefaultEndingSVG(writer);
                 }				
 			}
 		}
 	}
-
-    private void GenerateDefaultEndingSVG(StreamWriter writer)
-    {
-        writer.WriteLine("</svg>");
-    }
 
     private void GenerateDefaultStartingSVG(StreamWriter writer)
     {
@@ -97,7 +92,13 @@ public class ShapeDrawingForm : Form
         writer.WriteLine("<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">");
     }
 
-    private void ReferenceCanvasToShapes(string canvasName, object outputObject)
+    private void GenerateDefaultEndingSVG(StreamWriter writer)
+    {
+        writer.WriteLine("</svg>");
+    }
+
+ 
+    private void DrawShapesToCanvas(string canvasName, object outputObject)
     {
         foreach (Shape shape in shapes)
         {
@@ -116,7 +117,7 @@ public class ShapeDrawingForm : Form
     private void OnPaint(object sender, PaintEventArgs e)
 	{
         // Reference CSharp_Canvas to each Shape, such that the shapes will use CSharp_Canvas  to Draw. 
-        ReferenceCanvasToShapes("CSharp", e.Graphics);
+        DrawShapesToCanvas("CSharp", e.Graphics);
 
      
 	}
