@@ -7,15 +7,11 @@ using System.IO;
 
 class Circle : Shape
 {
-
-    private int x;
-	private int y;
 	private int size;
 
     public Circle(int x, int y, int size)
+        : base(x, y)
     {
-		this.x = x;
-		this.y = y;
 		this.size = size;
         
     }

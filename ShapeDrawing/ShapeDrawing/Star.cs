@@ -7,18 +7,14 @@ using System.IO;
 
 public class Star : Shape
 {
-
-	private int x;
-	private int y;
 	private int width;
 	private int height;
     private Point[] pts;
     private int numPoints;
 
 	public Star (int x, int y, int width, int height)
+        : base(x, y)
 	{
-		this.x = x;
-		this.y = y;
 		this.width = width;
 		this.height = height;
 	}
