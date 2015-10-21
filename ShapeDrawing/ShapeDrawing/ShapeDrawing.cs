@@ -97,12 +97,12 @@ public class ShapeDrawingForm : Form
     private void OnPaint(object sender, PaintEventArgs e)
 	{
         // Draw all the shapes in CSHarp
-        CanvasFactory drawingFactory = new CanvasFactory();
-        Canvas CSharpdrawing = drawingFactory.FabricateCanvas("CSharp", e.Graphics);
+        CanvasFactory canvasFactory = new CanvasFactory();
+        Canvas CSharpCanvas = canvasFactory.FabricateCanvas("CSharp", e.Graphics);
 
         foreach (Shape shape in shapes)
         {
-            shape.canvas = CSharpdrawing;
+            shape.canvas = CSharpCanvas;
             shape.Draw();
         }
 	}
