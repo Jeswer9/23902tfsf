@@ -22,7 +22,7 @@ class Circle : Shape
 
     public override void Draw()
     {
-        drawing.DrawCircle(x, y, size);       
+        canvas.DrawCircle(x, y, size);       
     }
 
 

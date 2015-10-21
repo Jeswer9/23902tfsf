@@ -51,7 +51,7 @@ public class Star : Shape
         SetLinePoints();
 		for (int i = 0; i < numPoints; i++) 
 		{
-			drawing.DrawLine(pts[i].X,
+			canvas.DrawLine(pts[i].X,
                                 pts[i].Y,
                                 pts[(i+1) % numPoints].X,
                                 pts[(i+1) % numPoints].Y);

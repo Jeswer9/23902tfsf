@@ -23,10 +23,10 @@ class Rectangle : Shape
     
 	public override void Draw()
     {
-        drawing.DrawLine(x, y, x + width, y);
-        drawing.DrawLine(x + width, y, x + width, y + height);
-        drawing.DrawLine(x + width, y + height, x, y + height);
-        drawing.DrawLine(x, y + height, x, y);
+        canvas.DrawLine(x, y, x + width, y);
+        canvas.DrawLine(x + width, y, x + width, y + height);
+        canvas.DrawLine(x + width, y + height, x, y + height);
+        canvas.DrawLine(x, y + height, x, y);
     }     
                         
 }
