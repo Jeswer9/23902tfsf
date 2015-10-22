@@ -12,8 +12,7 @@ class Circle : Shape
     public Circle(int x, int y, int size)
         : base(x, y)
     {
-		this.size = size;
-        
+		this.size = size;        
     }
 
     public override void Draw()
